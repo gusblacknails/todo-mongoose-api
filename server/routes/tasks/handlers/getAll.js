@@ -2,10 +2,13 @@ const Task = require('../../../models/Task')
 
 function getAll(req,res) {
 
+const title = "Tareas Pendientes"
   Task.find()
     .then( tasks => {
-      res.json(tasks)
+    
+      res.render('todo', { tasks, title })
     })
+    .catch(err => {res.json(err)})
 
 }
 
