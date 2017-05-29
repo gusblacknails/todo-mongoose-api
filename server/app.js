@@ -7,8 +7,11 @@ const getPass = require  ('./routes/middlewares/getPass')
 const routerTasks = require('./routes/tasks')
 const routerTask = require('./routes/task')
 
-const dbUrl = 'mongodb://localhost:27017/test'
-const PORT = 3001
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+const dbUrl = process.env.DB_URL
+const PORT = process.env.PORT
 
 const app = express()
 
