@@ -19,7 +19,8 @@ const app = express()
 
 mongoose.Promise = Promise
 mongoose.connect(dbUrl)
-// app.use(express.static('public'))
+
+//app.use(express.static('public'))
 app.use(express.static(__dirname + '/public'));
 
 app.set("view engine", 'pug')
