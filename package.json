@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node server/app.js",
     "dev": "nodemon server/app.js"
   },
   "keywords": [],
@@ -11,9 +12,13 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "cool-ascii-faces": "1.3.4",
     "debug": "^2.6.8",
     "express": "^4.15.3",
     "mongoose": "^4.10.2",
     "pug": "^2.0.0-rc.1"
+  },
+  "devDependencies": {
+    "dotenv": "^4.0.0"
   }
 }

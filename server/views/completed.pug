@@ -8,19 +8,9 @@ html(lang='en')
     script(src='https://code.jquery.com/jquery-3.2.1.min.js', integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=', crossorigin='anonymous')
     
   body
-    form(action='/tasks/', method='POST',)
-      | Tarea a realizar:  
-      input(type='text', name='task', placeholder='Añade una tarea', autofocus)
-      br
-      button(type='submit',id='add') Añadir
       h1= title
       ul.list
         each task, index in tasks
           li= task.task
-            a.done(href=`/task/${task._id}`)
-              i.glyphicon.glyphicon-ok
-            a.delete(href=`/task/${task._id}`)
-              i.glyphicon.glyphicon-trash
-            a.editTask(action=`/task/${task._id}`)
-              i.glyphicon.glyphicon-pencil
+            
   script(src="/js/main.js", type="text/javascript")

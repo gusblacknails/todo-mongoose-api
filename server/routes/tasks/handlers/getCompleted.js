@@ -1,11 +1,13 @@
 const Task = require('../../../models/Task')
 
 function getCompleted(req,res) {
-
-  Task.find({completed:true})
+const title = "Tareas Completadas"
+  Task.find()
     .then( tasks => {
-      res.json(tasks)
+    
+      res.render('completed', { tasks, title })
     })
+    .catch(err => {res.json(err)})
 
 }
 
